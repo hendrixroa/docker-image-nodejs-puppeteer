@@ -1,9 +1,11 @@
-FROM node:14-alpine
+FROM node:15-alpine
 WORKDIR /usr/src/app
 ARG NODE_ENV=production
 
 RUN apk --no-cache add \
     pango-dev \
+    librsvg-dev \
+    vips \
     giflib-dev
 
 RUN apk update && apk upgrade && \
